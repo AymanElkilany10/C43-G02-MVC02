@@ -1,0 +1,48 @@
+﻿@addTagHelper *,Microsoft.AspNetCore.Mvc.TagHelpers
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    @*<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />*@
+</head>
+<body>
+    @* Start Header*@
+    <header>
+        <center>
+            <nav class="mt-5">
+                @*<a href="/Home/Index" class="btn btn-primary m-2"> Home </a>*@
+                @* with tag helper *@
+                <a asp-controller="Home" asp-action="Index" class="btn btn-primary m-2"> Home </a>
+
+                <a href="/Home/Privacy" class="btn btn-warning m-2"> Privacy </a>
+                <a href="/Home/AboutUs" class="btn btn-success m-2"> About Us </a>
+                <a href="/Home/ContactUs" class="btn btn-secondary m-2"> Contact Us </a>
+                <a href="/Account/SignIn" class="btn btn-info m-2"> Sign In </a>
+                <a href="/Account/Register" class="btn btn-danger m-2"> Register </a>
+
+
+            </nav>
+        </center>
+    </header>
+    @* End Header*@
+
+
+    <div>
+        @RenderBody()
+    </div>
+
+    @* Start Footer*@
+    <footer>
+        <center>
+            <div class="mt-2">
+                <p> CopyRights &copy; @DateTime.Now.Year </p>
+            </div>
+        </center>
+    </footer>
+    @* End Footer*@
+
+</body>
+</html>
